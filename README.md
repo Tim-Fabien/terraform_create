@@ -26,7 +26,7 @@ This guide demonstrates how to create a new GitHub repository using Terraform, a
 5. **Apply the Terraform Configuration:**
    - Run `terraform apply` to create the GitHub repository as defined in your Terraform configuration. Confirm the action by typing `yes`.
 
-### Example Terraform Configuration
+### Example Terraform Configuration (see below)
 
 ```hcl
 provider "github" {
@@ -53,3 +53,18 @@ Replace YOUR_GITHUB_PERSONAL_ACCESS_TOKEN with the token generated in step 1.
 
 # Conclusion
 By following these steps and utilizing the example configuration, you can automate the creation of GitHub repositories with Terraform, streamlining your workflow and ensuring a consistent setup across projects.
+
+
+### Example Terraform Configuration
+```hcl
+provider "github" {
+  token = "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN"
+}
+
+resource "github_repository" "example" {
+  name        = "terraform-repo-example"
+  description = "Created with Terraform"
+  visibility  = "public"
+}
+
+Replace YOUR_GITHUB_PERSONAL_ACCESS_TOKEN with the token generated in step 1.
